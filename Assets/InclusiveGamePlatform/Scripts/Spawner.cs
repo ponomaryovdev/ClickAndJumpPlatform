@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    private GameObject _paltformPrefab;
+    public GameObject _paltformPrefab;
 
     private void Awake()
     {
-        var res = Resources.LoadAsync("Platforms/BasePlatform");
-        _paltformPrefab = (GameObject)res.asset;
     }
 
     public void SpawnNextPlatform()

@@ -6,7 +6,16 @@ using UnityEngine.Events;
 
 public class D_RunAnyFunction : MonoBehaviour
 {
+    public bool RunOnStart = false;
     public UnityEvent Functions = new UnityEvent();
+
+    private void Start()
+    {
+        if (RunOnStart)
+        { 
+            Functions.Invoke();
+        }
+    }
 }
 
 

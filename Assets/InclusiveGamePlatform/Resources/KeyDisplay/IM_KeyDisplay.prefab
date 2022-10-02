@@ -85,7 +85,7 @@ MonoBehaviour:
   m_StrokeWidth: 0
   m_OutlineWidth: 0
   m_OutlineColor: {r: 0, g: 0, b: 0, a: 0}
-  m_FalloffDistance: 0.5
+  m_FalloffDistance: 0
   m_ConstrainRotation: 1
   m_ShapeRotation: 0
   m_FlipHorizontal: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
     m_CornerRadius: {x: 0, y: 0, z: 0}
     m_UniformCornerRadius: 0
   m_Rectangle:
-    m_CornerRadius: {x: 1, y: 1, z: 1, w: 1}
+    m_CornerRadius: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
     m_UniformCornerRadius: 1
   m_Circle:
     m_Radius: 0

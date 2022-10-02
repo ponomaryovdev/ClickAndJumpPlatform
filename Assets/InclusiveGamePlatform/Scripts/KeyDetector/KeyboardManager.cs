@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using InclusiveGamePlatform.Core.Patterns.Observer;
 
 public class KeyboardManager : MonoBehaviour
 {
+    private string _lastKeyPressd;
+
+
     private Dictionary<string, string> _keys = new Dictionary<string, string>()
     {
         {"q", "é"},
@@ -55,8 +59,12 @@ public class KeyboardManager : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            var keyPressed = Input.inputString;
-            Debug.Log(keyPressed);
+            DetectNewKey(Input.inputString);
         }
+    }
+
+    public void DetectNewKey(string newKey)
+    {
+        EventHolder<KeyDetectionInfo>.Notify(new KeyDetectionInfo(_keys.GetValueOrDefault(newKey.ToLower())));
     }
 }

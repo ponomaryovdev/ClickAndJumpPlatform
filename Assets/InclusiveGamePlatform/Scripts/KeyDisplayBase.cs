@@ -14,10 +14,24 @@ public class KeyDisplayBase : MonoBehaviour
     private TextMeshProUGUI _keyDisplayText = null;
     private MPImage _mpImage = null;
     private AudioSource _audioSource = null;
+    private string _key;
+
+    public string Key
+    {
+        get
+        {
+            return _key;
+        }
+
+        set
+        {
+            _key = value;
+        }
+    }
 
     private void Awake()
     {
-        _keyDisplayText = GetComponent<TextMeshProUGUI>();
+        _keyDisplayText = GetComponentInChildren<TextMeshProUGUI>();
         _mpImage = GetComponent<MPImage>();
         _audioSource = GetComponent<AudioSource>();
     }
@@ -29,6 +43,7 @@ public class KeyDisplayBase : MonoBehaviour
 
     public void Init(string key)
     {
+        Key = key;
         _keyDisplayText.text = key;
         Show();
     }
@@ -55,5 +70,11 @@ public class KeyDisplayBase : MonoBehaviour
             _mpImage.color = color;
         });
         LeanTween.scale(gameObject, Vector3.zero, TimeToShowHide).setEaseInBack();
+    }
+
+    public virtual void Despawn()
+    {
+        Hide();
+        Destroy(gameObject, 1);
     }
 }
