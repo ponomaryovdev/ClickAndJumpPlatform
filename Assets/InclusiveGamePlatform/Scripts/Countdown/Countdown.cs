@@ -40,6 +40,12 @@ public class Countdown : Singleton<Countdown>
         _timerIsRunning = true;
     }
 
+    public void StartTimer(float timeRemaning)
+    {
+        _timeRemaining = timeRemaning;
+        _timerIsRunning = true;
+    }
+
     public void PuseTimer()
     {
         _timerIsRunning = false;

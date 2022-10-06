@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3d64ef774646f4191e2087c232c9d2, type: 3}
   m_Name: AlphabetWordCollection
   m_EditorClassIdentifier: 
-  keyBlocks: []
+  keyBlocks:
+  - keys:
+    - "\u0430"
+  - keys:
+    - "\u0440"
+  - keys:
+    - "\u043D"

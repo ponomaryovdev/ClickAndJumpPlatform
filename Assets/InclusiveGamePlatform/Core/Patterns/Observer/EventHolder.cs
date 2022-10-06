@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 namespace InclusiveGamePlatform.Core.Patterns.Observer
 {
@@ -19,14 +20,14 @@ namespace InclusiveGamePlatform.Core.Patterns.Observer
         public static void Unsubscribe(Action<T> subscriber)
         {
             if (_subscribers.Contains(subscriber))
-                _subscribers.Remove(subscriber);
+                  _subscribers.Remove(subscriber);
             else
                 Debug.LogWarning($"You can't remove a subscriber - {subscriber.GetType()}, because it's already removed.");
         }
 
         public static void Notify(T state)
         {
-            foreach (var subscriber in _subscribers)
+            foreach (var subscriber in _subscribers.ToList())
                 subscriber?.Invoke(state);
         }
     }

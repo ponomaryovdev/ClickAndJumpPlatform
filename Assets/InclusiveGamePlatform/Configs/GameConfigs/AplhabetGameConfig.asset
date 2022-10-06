@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e302123bbc1dcbb4ab734e440d8069b5, type: 3}
   m_Name: AplhabetGameConfig
   m_EditorClassIdentifier: 
+  Time: 300
+  wordCollection: {fileID: 11400000, guid: 772d6ec124328bc4697cf050f8dcf649, type: 2}

@@ -11,9 +11,9 @@ public class CalculateVelocity : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void MoveToPoint(Transform target)
+    public void MoveToPoint(Vector3 targetPosition)
     {
-        rb.velocity = CalculateBalisticVelocity(transform.position, target.position, 60);
+        rb.velocity = CalculateBalisticVelocity(transform.position, targetPosition, 60);
     }
 
     private Vector3 CalculateBalisticVelocity(Vector3 initialPos, Vector3 finalPos, float angle)

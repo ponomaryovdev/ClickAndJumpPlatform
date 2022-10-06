@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/InclusiveGamePlatform/Scenes/AplhabetGame.unity
     guid: 6d3db11dffa98514ca06eab9b1c976bf
+  - enabled: 1
+    path: Assets/InclusiveGamePlatform/Scenes/CityGame.unity
+    guid: d34c1ae3a458e3e4fa3919c2747d5d5b
+  - enabled: 1
+    path: Assets/InclusiveGamePlatform/Scenes/InfinityGame.unity
+    guid: 303e4d5e5bdb4e142812e465f35e022b
+  - enabled: 1
+    path: Assets/InclusiveGamePlatform/Scenes/InclusivePlatform.unity
+    guid: df154365441b7cc43969eebc47c98c51
   m_configObjects: {}

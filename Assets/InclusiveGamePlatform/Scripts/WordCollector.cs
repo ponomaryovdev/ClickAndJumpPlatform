@@ -15,10 +15,23 @@ public class WordCollector : Singleton<WordCollector>
     public UnityEvent TrueKeyWasDetected;
     public UnityEvent FalseKeyWasDetected;
     public UnityEvent BlockWasFinished;
+    public bool wordEnd;
+
+    private GeneralGameplayManager _generalGameplayManager;
 
     private void Awake()
     {
+        _generalGameplayManager = GetComponentInParent<GeneralGameplayManager>();
+    }
+
+    private void OnEnable()
+    {
         EventHolder<KeyDetectionInfo>.Subscribe(DetectNewKeyPressed);
+    }
+
+    private void OnDisable()
+    {
+        EventHolder<KeyDetectionInfo>.Unsubscribe(DetectNewKeyPressed);
     }
 
 
@@ -40,18 +53,23 @@ public class WordCollector : Singleton<WordCollector>
         if (newKey == "Null")
             return;
 
-
         if(_currentKey == newKey)
         {
-            Debug.Log("True key");
             TrueKeyWasDetected.Invoke();
+            Score.Instance.AddScore(1);
 
             _currentKeyId++;
 
             if (_currentKeyId == _currentKeyBlock.keys.Count)
             {
-                Debug.Log("Finish block");
+                if (_currentKeyBlockId == wordCollection.keyBlocks.Count)
+                {
+                    _generalGameplayManager.EndGame();
+                    return; 
+                }
+
                 BlockWasFinished.Invoke();
+                _currentKey = _currentKeyBlock.keys[_currentKeyId];
             }
             else
             {
@@ -61,7 +79,6 @@ public class WordCollector : Singleton<WordCollector>
         }
         else
         {
-            Debug.Log("False key");
             FalseKeyWasDetected.Invoke();
         }
     }
