@@ -6,8 +6,6 @@ using InclusiveGamePlatform.Core.Patterns.Observer;
 public class KeyboardManager : MonoBehaviour
 {
     private string _lastKeyPressd;
-
-
     private Dictionary<string, string> _keys = new Dictionary<string, string>()
     {
         {"q", "é"},
@@ -44,16 +42,6 @@ public class KeyboardManager : MonoBehaviour
         {".", "þ"},
         {"`", "¸"},
     };
-
-    private void Awake()
-    {
-    }
-
-
-    void Start()
-    {
-        
-    }
 
     void Update()
     {

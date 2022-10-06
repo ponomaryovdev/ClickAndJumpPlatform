@@ -43,6 +43,20 @@ public class UIButtonAnimated : UIButton
 
         LeanTween.scale(gameObject, Vector3.one, TimeToHoverScale);
     }
+
+    public override void OnPointerUp(PointerEventData eventData)
+    {
+        base.OnPointerUp(eventData);
+
+        LeanTween.scale(gameObject, OnHoverScale, TimeToHoverScale);
+    }
+
+    public override void OnPointerDown(PointerEventData eventData)
+    {
+        base.OnPointerDown(eventData);
+
+        LeanTween.scale(gameObject, Vector3.one, TimeToHoverScale);
+    }
 }
 
 [CustomEditor(typeof(UIButtonAnimated))]

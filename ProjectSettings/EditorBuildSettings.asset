@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/InclusiveGamePlatform/Scenes/MainMenu.unity
     guid: dc45c827ec41d7048887ce7f7dd7a329
   - enabled: 1
-    path: Assets/InclusiveGamePlatform/Scenes/BlueWizardGame.unity
+    path: Assets/InclusiveGamePlatform/Scenes/AplhabetGame.unity
     guid: 6d3db11dffa98514ca06eab9b1c976bf
   m_configObjects: {}

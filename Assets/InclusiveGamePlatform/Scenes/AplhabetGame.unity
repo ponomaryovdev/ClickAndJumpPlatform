@@ -278,9 +278,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 518071642}
   - {fileID: 346749285}
-  - {fileID: 549169767}
   - {fileID: 844657986}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -551,7 +549,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 225182619}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &346749286
 AudioSource:
@@ -1171,7 +1169,6 @@ GameObject:
   m_Component:
   - component: {fileID: 518071642}
   - component: {fileID: 518071643}
-  - component: {fileID: 518071644}
   m_Layer: 0
   m_Name: KeyboardManager
   m_TagString: Untagged
@@ -1186,13 +1183,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518071641}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 225182619}
-  m_RootOrder: 0
+  m_Father: {fileID: 844657986}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &518071643
 MonoBehaviour:
@@ -1206,34 +1203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d617dd1424af88940910e5f9a71446a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &518071644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518071641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb5dd15395942de48ad9b0304e8c5861, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RunOnStart: 0
-  Functions:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 549169768}
-        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
-        m_MethodName: SpawnNextPlatform
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &549169766
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,13 +1228,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549169766}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 225182619}
-  m_RootOrder: 2
+  m_Father: {fileID: 844657986}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &549169768
 MonoBehaviour:
@@ -1687,7 +1656,6 @@ GameObject:
   m_Component:
   - component: {fileID: 696156560}
   - component: {fileID: 696156561}
-  - component: {fileID: 696156562}
   m_Layer: 8
   m_Name: Points
   m_TagString: Untagged
@@ -1743,18 +1711,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &696156562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 696156559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8d8ec8fd13d85b4a91c18decd110295, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &803215446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,8 +1923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 844657986}
   - component: {fileID: 844657987}
-  - component: {fileID: 844657988}
-  - component: {fileID: 844657989}
+  - component: {fileID: 844657990}
   m_Layer: 0
   m_Name: GeneralManager
   m_TagString: Untagged
@@ -1987,9 +1942,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 549169767}
+  - {fileID: 518071642}
   m_Father: {fileID: 225182619}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &844657987
 MonoBehaviour:
@@ -2012,7 +1969,7 @@ MonoBehaviour:
   TimeIsOut:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &844657988
+--- !u!114 &844657990
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2021,38 +1978,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 844657985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1eb18bb58842144ba6eb61d6a485a4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 99fd95c63f2d53449a61b2867a33248d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreCount: 0
---- !u!114 &844657989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844657985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb5dd15395942de48ad9b0304e8c5861, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RunOnStart: 0
-  Functions:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 844657988}
-        m_TargetAssemblyTypeName: Score, Assembly-CSharp
-        m_MethodName: AddScore
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &919447348
 GameObject:
   m_ObjectHideFlags: 0
