@@ -14,6 +14,8 @@ public class PlatformSpawner : MonoBehaviour
     private GameObject _currentPlatform = null;
     private CalculateVelocity _calculateVelocity = null;
 
+    public bool randomize = false;
+
     private void Awake()
     {
         _calculateVelocity = FindObjectOfType<CalculateVelocity>();
@@ -44,7 +46,16 @@ public class PlatformSpawner : MonoBehaviour
 
         _currentPlatform = Instantiate(_paltformPrefab);
         PlatformBase platformTmp = _currentPlatform.GetComponent<PlatformBase>();
-        platformTmp.Init(WordCollector.Instance.GetNextKeyBlock());
+
+        if (randomize)
+        {
+            platformTmp.Init(WordCollector.Instance.GetNextKeyBlockRandom());
+        }
+        else
+        {
+            platformTmp.Init(WordCollector.Instance.GetNextKeyBlock());
+        }
+
         platformTmp.transform.position = new Vector3(_previosPlatform.transform.position.x + platformTmp.SpriteList.Count * multiplayer, _previosPlatform.transform.position.y, _previosPlatform.transform.position.z);
         platformTmp.ActivatePlatform();
         _calculateVelocity.MoveToPoint(platformTmp.transform.position);

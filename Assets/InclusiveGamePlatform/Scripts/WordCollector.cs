@@ -43,6 +43,18 @@ public class WordCollector : Singleton<WordCollector>
         return _currentKeyBlock;
     }
 
+    public KeyBlock GetNextKeyBlockRandom()
+    {
+        string[] alphabet = { "é", "ö", "ó", "ê", "å", "¸", "í", "ã", "ø", "ù", "ç", "õ", "ú", "ô", "û", "â", "à", "ï", "ð", "î", "ë", "ä", "æ", "ý"
+        , "ÿ", "÷", "ñ", "ì", "è", "ò", "ü", "á", "þ"};
+        _currentKey = alphabet[Random.Range(0, 33)];
+        List<string> a = new List<string>();
+        a.Add(_currentKey);
+        _currentKeyId = 0;
+        _currentKeyBlock = new KeyBlock(a);
+        return _currentKeyBlock;
+    }
+
     private void DetectNewKeyPressed(KeyDetectionInfo newKeyInfo)
     {
         if (_currentKeyId >= _currentKeyBlock.keys.Count)
